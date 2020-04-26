@@ -1,8 +1,11 @@
+import {Roles } from "./Roles"
+import {Groups } from "./Groups"
 export class User {
-    id:number;
+    ID:number;
     username:string;
-    name:string;
+    firstName:string;
+    lastName: string;
     isActive:boolean;
-    roles:Array<string>
-    groups:Array<string>
+    roles:Array<any>
+    groups:Array<any>
 }

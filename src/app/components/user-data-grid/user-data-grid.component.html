@@ -10,67 +10,43 @@
             mode="popup"
             [allowUpdating]="true">
             <dxo-popup
-                title="Employee Info"
+                title="Users"
                 [showTitle]="true"
                 [width]="700"
                 [height]="525"
                 [position]="{ my: 'top', at: 'top' }">
             </dxo-popup>
             <dxo-form>
-                <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
-                    <dxi-item dataField="FirstName"></dxi-item>
-                    <dxi-item dataField="LastName"></dxi-item>
-                    <dxi-item dataField="Prefix"></dxi-item>
-                    <dxi-item dataField="BirthDate"></dxi-item>
-                    <dxi-item dataField="Position"></dxi-item>
-                    <dxi-item dataField="HireDate"></dxi-item>
-                    <dxi-item
-                        dataField="Notes"
-                        editorType="dxTextArea"
-                        [colSpan]="2"
-                        [editorOptions]="{ height: 100 }">
+                    <dxi-item dataField="username"></dxi-item>
+                    <dxi-item dataField="firstName"></dxi-item>
+                    <dxi-item dataField="lastName"></dxi-item>
+                    <dxi-item dataField="isActive"></dxi-item>
+                    <dxi-item dataField="groups">
+                        <dx-tag-box
+                        [items]="groupsData"
+                        [showSelectionControls]="true"
+                        applyValueMode="useButtons">
+                        </dx-tag-box>
                     </dxi-item>
-                </dxi-item>
-                
-                <dxi-item itemType="group" caption="Home Address" [colCount]="2" [colSpan]="2">
-                    <dxi-item dataField="StateID"></dxi-item>
-                    <dxi-item dataField="Address"></dxi-item>
-                </dxi-item>
+                            
+                    <dxi-item dataField="roles" >
+                        <dx-tag-box
+                        [items]="rolesData"
+                        [showSelectionControls]="true"
+                        applyValueMode="useButtons">
+                        </dx-tag-box>
+
+                    </dxi-item>    
             </dxo-form>
         </dxo-editing>
         
-        <dxi-column dataField="Prefix" caption="Title" [width]="70"></dxi-column>
-        <dxi-column dataField="FirstName"></dxi-column>
-        <dxi-column dataField="LastName"></dxi-column>
-        <dxi-column
-            dataField="BirthDate"
-            dataType="date">
+        <dxi-column dataField="username" caption="Uživatel"></dxi-column>
+        <dxi-column dataField="firstName" caption="Jméno"></dxi-column>
+        <dxi-column dataField="lastName" caption="Příjmení"></dxi-column>
+        <dxi-column dataField="roles" caption="Role uživatele" ></dxi-column>
+        <dxi-column dataField="groups" caption="Skupiny uživatele" >
         </dxi-column>
-        <dxi-column
-            dataField="Position"
-            [width]="170">
-        </dxi-column>
-        <dxi-column
-            dataField="HireDate"
-            dataType="date">
-        </dxi-column>
-        <dxi-column
-            dataField="StateID"
-            caption="State"
-            [width]="125">
-            <dxo-lookup
-                [dataSource]=""
-                displayExpr="Name"
-                valueExpr="ID">
-            </dxo-lookup>
-        </dxi-column>
-        <dxi-column
-            dataField="Address"
-            [visible]="false">
-        </dxi-column>
-        <dxi-column
-            dataField="Notes"
-            [visible]="false">
-        </dxi-column>
+
+        <dxi-column dataField="isActive" caption="Aktivní"></dxi-column>
     </dx-data-grid>
   </div>

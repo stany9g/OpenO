@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'
 import { HttpClient} from '@angular/common/http';
-import { User } from '../models/User';
+import { Roles } from '../models/Roles';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  usersUrl:string = 'http://localhost:3000/users';
+export class RoleService {
+  usersUrl:string = 'http://localhost:3000/roles';
 
   usersLimit = '?_limit=50';
   constructor(private http:HttpClient) { }
 
-  getUsers():Observable<User[]> {
-    return this.http.get<User[]>(`${this.usersUrl}${this.usersLimit}`);
+  getRoles():Observable<Roles[]> {
+    return this.http.get<Roles[]>(`${this.usersUrl}${this.usersLimit}`);
   }
 }
