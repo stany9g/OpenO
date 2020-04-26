@@ -22,9 +22,14 @@
     "devextreme": "latest",
     "devextreme-angular": "latest",
     "devextreme-schematics": "^1.1.13",
-    "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "0.10.2",
+    "rxjs": "latest",
+    "quill": "1.3.7",
+    "jszip": "3.1.3",
+    "devexpress-gantt": "0.0.29",
+    "devexpress-diagram": "0.1.54",
+    "core-js": "2.4.1",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
